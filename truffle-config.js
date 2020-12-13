@@ -24,7 +24,11 @@
 // const fs = require('fs');
 // const mnemonic = fs.readFileSync(".secret").toString().trim();
 
-const { alchemyApiKey, mnemonic } = require('./secrets.json');
+require('dotenv').config();
+
+const mnemonic = process.env.MNEMONIC;
+const alchemyApiKey = process.env.ALCHEMY_API_KEY;
+
 const HDWalletProvider = require('@truffle/hdwallet-provider');
 
 module.exports = {
