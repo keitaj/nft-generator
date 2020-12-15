@@ -2,6 +2,7 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <button id="b-button" v-bind:title="walletConnectButton">EnableEthereum</button>
   </div>
 </template>
 
