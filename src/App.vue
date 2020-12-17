@@ -1,18 +1,30 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-    <button id="b-button" v-bind:title="walletConnectButton">EnableEthereum</button>
+    <WalletConnectButton v-on:connectWallet="connectWallet()"/>
+    <p>Account: {{ walletAccount }}</p>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import WalletConnectButton from './components/WalletConnectButton.vue'
 
 export default {
   name: 'App',
+  data: function () {
+    return {
+      walletAccount: ''
+    }
+  },
   components: {
-    HelloWorld
+    WalletConnectButton
+  },
+  methods: {
+    connectWallet: async function () {
+      const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+      const account = accounts[0];
+      this.walletAccount = account;
+    }
   }
 }
 </script>

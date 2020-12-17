@@ -12,6 +12,7 @@
   },
   "main": "index.js",
   "dependencies": {
+    "@metamask/detect-provider": "^1.2.0",
     "core-js": "^3.6.5",
     "dotenv": "^8.2.0",
     "vue": "^2.6.11"
