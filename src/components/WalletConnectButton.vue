@@ -7,7 +7,7 @@
 <script>
 
 export default {
-  name: 'WalletConnect',
+  name: 'WalletConnectButton',
   methods: {
     clickWalletConnectBtn: function () {
       this.$emit('connectWallet')
